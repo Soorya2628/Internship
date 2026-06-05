@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tech Stack Section</title>
+    <!-- Font Awesome for clean layout placeholders -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- Google Fonts for futuristic/tech heading looks -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Global Reset and Themes */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d1117; /* Dark slate blue/black tone matching image background */
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Full Layout Wrapper */
+        .tech-stack-section {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Section Heading Typography with Sci-Fi Tech Vibe */
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 35px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        /* Filter Pills Horizontal Navigation Bar Layout */
+        .filter-nav {
+            display: flex;
+            background-color: #161b22; /* Darker embedded card tray background color */
+            padding: 6px;
+            border-radius: 8px;
+            gap: 5px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            width: 100%;
+            overflow-x: auto; /* Scrollable bar setup on smaller screens */
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            color: #8b949e; /* Muted gray text label tint */
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            flex: 1;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        /* Light sky blue active element item */
+        .filter-btn.active {
+            background-color: #58a6ff; 
+            color: #0d1117; /* High contrast dark text on active block */
+            font-weight: 600;
+        }
+
+        .filter-btn:hover:not(.active) {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Flexible Grid Matrix System Layout (5 Columns Across) */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Single Tech Box Component Card Shape */
+        .tech-card {
+            background-color: #161b22; /* Sleek structural layout background fill */
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 25px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            min-height: 145px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(88, 166, 255, 0.3); /* Subtle blue glow on hover */
+        }
+
+        /* Tech Icon Vector Placeholder Boxes */
+        .tech-icon-container {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Vector and Image Styling overrides */
+        .tech-icon-container i {
+            font-size: 44px;
+        }
+
+        .tech-icon-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Card Text Label Sizing */
+        .tech-name {
+            color: #c9d1d9; /* Crisp light gray label */
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Color profiles for standard web development icon symbols matching image */
+        .icon-c { color: #58a6ff; font-weight: bold; font-family: sans-serif; font-size: 40px; }
+        .icon-cpp { color: #00599C; font-weight: bold; font-family: sans-serif; font-size: 36px; }
+        .icon-python { color: #3776AB; }
+        .icon-java { color: #5382a1; }
+        .icon-html { color: #E34F26; }
+        .icon-css { color: #1572B6; }
+        .icon-react { color: #61DAFB; }
+
+        /* Responsive Breakdowns for Mobile Phone and Tablet viewports */
+        @media (max-width: 1024px) {
+            .tech-grid {
+                grid-template-columns: repeat(4, 1fr); /* 4 columns for tablets */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns for smaller viewports */
+            }
+            .section-title {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for phones */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Tech Dashboard Section -->
+    <section class="tech-stack-section">
+        
+        <!-- Dashboard Main Accent Headline -->
+        <h2 class="section-title">My Tech Stack</h2>
+
+        <!-- Horizontal Interactive Tab Filter Menu Layout -->
+        <div class="filter-nav">
+            <button class="filter-btn active">All (25)</button>
+            <button class="filter-btn">Languages (7)</button>
+            <button class="filter-btn">Tools (8)</button>
+            <button class="filter-btn">Libraries (5)</button>
+            <button class="filter-btn">Databases (4)</button>
+        </div>
+
+        <!-- 5-Column Dashboard Technology Matrix Deck -->
+        <div class="tech-grid">
+            
+            <!-- Card Item: C -->
+            <div class="tech-card">
+                <div class="tech-icon-container">
+                    <span class="icon-c">C</span>
+                </div>
+                <div class="tech-name">C</div>
+            </div>
+
+            <!-- Card Item: C++ -->
+            <div class="tech-card">
+                <div class="tech-icon-container">
+                    <span class="icon-cpp">C++</span>
+                </div>
+                <div class="tech-name">C++</div>
+            </div>
+
+            <!-- Card Item: Python -->
+            <div class="tech-card">
+                <div class="tech-icon-container">
+                    <i class="fa-brands fa-python icon-python"></i>
+                </div>
+                <div class="tech-name">Python</div>
+            </div>
+
+            <!-- Card Item: Java -->
+            <div class="tech-card">
+                <div class="tech-icon-container">
+                    <i class="fa-brands fa-java icon-java"></i>
+                </div>
+                <div class="tech-name">Java</div>
+            </div>
+
+            <!-- Card Item: HTML -->
+            <div class="tech-card">
+                <div class="tech-icon-container">
+                    <i class="fa-brands fa-html5 icon-html"></i>
+                </div>
+                <div class="tech-name">HTML</div>
+            </div>
+
+            <!-- Card Item: CSS -->
+            <div class="tech-card">
+                <div class="tech-icon-container">
+                    <i class="fa-brands fa-css3-alt icon-css"></i>
+                </div>
+                <div class="tech-name">CSS</div>
+            </div>
+
+            <!-- Card Item: NumPy (Icon Alternative Placement Example) -->
+            <div class="tech-card">
+                <div class="tech-icon-container">
+                    <!-- Standard placeholder for brand logo metrics image arrays -->
+                    <i class="fa-solid fa-cube" style="color: #4d77cf; font-size: 38px;"></i>
+                </div>
+                <div class="tech-name">Numpy</div>
+            </div>
+
+            <!-- Card Item: Pandas -->
+            <div class="tech-card">
+                <div class="tech-icon-container">
+                    <i class="fa-solid fa-chart-simple" style="color: #130654; font-size: 38px;"></i>
+                </div>
+                <div class="tech-name">Pandas</div>
+            </div>
+
+            <!-- Card Item: Matplotlib -->
+            <div class="tech-card">
+                <div class="tech-icon-container">
+                    <i class="fa-solid fa-chart-pie" style="color: #2ca02c; font-size: 38px;"></i>
+                </div>
+                <div class="tech-name">Matplotlib</div>
+            </div>
+
+            <!-- Card Item: MySQL -->
+            <div class="tech-card">
+                <div class="tech-icon-container">
+                    <i class="fa-solid fa-database" style="color: #00758f; font-size: 38px;"></i>
+                </div>
+                <div class="tech-name">MySQL</div>
+            </div>
+
+            <!-- Card Item: PostgreSQL -->
+            <div class="tech-card">
+                <div class="tech-icon-container">
+                    <i class="fa-solid fa-elephant" style="color: #336791; font-size: 38px;"></i>
+                </div>
+                <div class="tech-name">PostgreSQL</div>
+            </div>
+
+            <!-- Card Item: MongoDB -->
+            <div class="tech-card">
