@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing 2</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #212529;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pricing-container {
+            width: 100%;
+            max-width: 960px;
+            text-align: center;
+        }
+
+        /* Header Styles */
+        .pricing-header {
+            max-width: 700px;
+            margin: 0 auto 48px auto;
+        }
+
+        .pricing-header h1 {
+            font-size: 56px;
+            font-weight: 300;
+            margin-bottom: 16px;
+            color: #212529;
+        }
+
+        .pricing-header p {
+            font-size: 18px;
+            color: #6c757d;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        /* Card Grid Layout */
+        .pricing-grid {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        /* Base Card Styling */
+        .card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 4px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Enterprise Border Modification */
+        .card.enterprise-card {
+            border-color: #007bff;
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.1);
+        }
+
+        /* Card Header */
+        .card-header {
+            padding: 12px 24px;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        /* Enterprise Header Modification */
+        .card.enterprise-card .card-header {
+            background-color: #007bff;
+            color: #ffffff;
+            border-bottom-color: #007bff;
+        }
+
+        /* Card Body Content */
+        .card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            align-items: center;
+        }
+
+        /* Price Configuration */
+        .card-price {
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .card-price span {
+            color: #6c757d;
+            font-weight: 300;
+        }
+
+        /* Feature List Styling */
+        .card-features {
+            list-style: none;
+            width: 100%;
+            margin-bottom: 24px;
+        }
+
+        .card-features li {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 4px;
+            color: #212529;
+        }
+
+        /* Button Configurations */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: 400;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.15s ease-in-out;
+            margin-top: auto; /* Forces button to the bottom of the card */
+        }
+
+        .btn-outline {
+            color: #007bff;
+            background-color: transparent;
+            border: 1px solid #007bff;
+        }
+
+        .btn-outline:hover {
+            color: #ffffff;
+            background-color: #007bff;
+        }
+
+        .btn-primary {
+            color: #ffffff;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+        /* Responsive Scaling Breakpoints */
+        @media (max-width: 960px) {
+            .pricing-grid {
+                max-width: 700px;
+                margin: 0 auto;
+            }
+            .card {
+                width: calc(50% - 12px);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="pricing-container">
+    
+    <!-- Top Header Title and Description -->
+    <div class="pricing-header">
+        <h1>Pricing</h1>
+        <p>Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</p>
+    </div>
+    
+    <!-- Pricing Cards Grid -->
+    <div class="pricing-grid">
+        
+        <!-- Free Tier Card -->
+        <div class="card">
+            <div class="card-header">Free</div>
+            <div class="card-body">
+                <h2 class="card-price">$0<span>/mo</span></h2>
+                <ul class="card-features">
+                    <li>10 users included</li>
+                    <li>2 GB of storage</li>
+                    <li>Email support</li>
+                    <li>Help center access</li>
+                </ul>
+                <a href="#" class="btn btn-outline">Sign up for free</a>
+            </div>
+        </div>
+
+        <!-- Pro Tier Card -->
+        <div class="card">
+            <div class="card-header">Pro</div>
+            <div class="card-body">
+                <h2 class="card-price">$15<span>/mo</span></h2>
+                <ul class="card-features">
+                    <li>20 users included</li>
+                    <li>10 GB of storage</li>
+                    <li>Priority email support</li>
+                    <li>Help center access</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Get started</a>
+            </div>
+        </div>
+
+        <!-- Enterprise Tier Card -->
+        <div class="card enterprise-card">
+            <div class="card-header">Enterprise</div>
+            <div class="card-body">
+                <h2 class="card-price">$29<span>/mo</span></h2>
+                <ul class="card-features">
+                    <li>30 users included</li>
+                    <li>15 GB of storage</li>
+                    <li>Phone and email support</li>
+                    <li>Help center access</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Contact us</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
