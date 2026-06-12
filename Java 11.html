@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h3>Strong Password Generator</h3>
+    
+    Length: <input type="number" id="length" value="12" min="4" max="20"><br><br>
+    <button onclick="generate()">Generate Password</button>
+    <p>Your password: <b id="pass"></b></p>
+    <button onclick="copyPass()">Copy</button>
+
+    <script>
+        function generate() {
+            let length = document.getElementById("length").value;
+            let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+            let pass = "";
+            
+            for (let i = 0; i < length; i++) {
+                pass += chars[Math.floor(Math.random() * chars.length)];
+            }
+            
+            document.getElementById("pass").innerHTML = pass;
+        }
+        
+        function copyPass() {
+            let text = document.getElementById("pass").innerText;
+            navigator.clipboard.writeText(text);
+            alert("Password copied!");
+        }
+    </script>
+</body>
+</html>
