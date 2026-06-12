@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>generate a random number</p>
+<button onclick="gen()">Generate</button>
+<p id="num"></p>
+
+<script>
+function gen() {
+  let n = Math.floor(Math.random() * 100);
+  document.getElementById("num").innerHTML = n;
+}
+</script>
+
+</body>
+</html>
